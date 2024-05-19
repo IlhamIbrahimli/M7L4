@@ -44,3 +44,5 @@ pytest
 ```
 ## Автор
 ilham
+
+Tests pass 100%
