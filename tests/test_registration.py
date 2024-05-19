@@ -38,3 +38,21 @@ def test_add_new_user(setup_database):
 Тест аутентификации пользователя с неправильным паролем.
 Тест отображения списка пользователей.
 """
+
+def test_authenticate_user(setup_database):
+    """Тест добавления нового пользователя."""
+    authenticate_user("testuser","password123")
+
+    assert True
+
+def test_authenticate_user(setup_database):
+    """Тест добавления нового пользователя."""
+    authenticate_user("wasd","wasd")
+
+    assert False
+
+def test_authenticate_user(setup_database):
+    """Тест добавления нового пользователя."""
+    authenticate_user("testuser","password321")
+
+    assert False
