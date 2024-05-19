@@ -39,20 +39,20 @@ def test_add_new_user(setup_database):
 Тест отображения списка пользователей.
 """
 
-def test_authenticate_user(setup_database):
+def test_authenticate_user():
     """Тест добавления нового пользователя."""
-    authenticate_user("testuser","password123")
+    user = authenticate_user("testuser","password123")
 
-    assert True
+    assert user
 
-def test_authenticate_user(setup_database):
+def test_authenticate_user_not_exists(setup_database):
     """Тест добавления нового пользователя."""
-    authenticate_user("wasd","wasd")
+    user = authenticate_user("wasd","wasd")
 
-    assert False
+    assert not user
 
-def test_authenticate_user(setup_database):
+def test_authenticate_user_wrong_pwsd(setup_database):
     """Тест добавления нового пользователя."""
-    authenticate_user("testuser","password321")
+    user = authenticate_user("testuser","password321")
 
-    assert False
+    assert not user
